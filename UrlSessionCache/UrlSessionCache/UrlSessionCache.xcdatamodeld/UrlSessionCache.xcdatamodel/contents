@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21512" systemVersion="22A380" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="BookEntity" representedClassName="BookEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="age_group" optional="YES" attributeType="String"/>
+        <attribute name="amazon_product_url" optional="YES" attributeType="String"/>
+        <attribute name="article_chapter_link" optional="YES" attributeType="String"/>
+        <attribute name="asterisk" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="author" optional="YES" attributeType="String"/>
+        <attribute name="book_image" optional="YES" attributeType="String"/>
+        <attribute name="book_image_height" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="book_image_width" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="book_review_link" optional="YES" attributeType="String"/>
+        <attribute name="book_uri" optional="YES" attributeType="String"/>
+        <attribute name="contributor" optional="YES" attributeType="String"/>
+        <attribute name="contributor_note" optional="YES" attributeType="String"/>
+        <attribute name="dagger" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="descrription" optional="YES" attributeType="String"/>
+        <attribute name="first_chapter_link" optional="YES" attributeType="String"/>
+        <attribute name="price" optional="YES" attributeType="String"/>
+        <attribute name="primary_isbn10" optional="YES" attributeType="String"/>
+        <attribute name="primary_isbn13" optional="YES" attributeType="String"/>
+        <attribute name="publisher" optional="YES" attributeType="String"/>
+        <attribute name="rank" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="rank_last_week" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="sunday_review_link" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="weeks_on_list" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="parentList" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BookResultEntity" inverseName="books" inverseEntity="BookResultEntity"/>
+    </entity>
+    <entity name="BookResultEntity" representedClassName="BookResultEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="bestsellers_date" optional="YES" attributeType="String"/>
+        <attribute name="display_name" optional="YES" attributeType="String"/>
+        <attribute name="list_name" optional="YES" attributeType="String"/>
+        <attribute name="list_name_encoded" optional="YES" attributeType="String"/>
+        <attribute name="next_published_date" optional="YES" attributeType="String"/>
+        <attribute name="normal_list_ends_at" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="previous_published_date" optional="YES" attributeType="String"/>
+        <attribute name="published_date" optional="YES" attributeType="String"/>
+        <attribute name="published_date_description" optional="YES" attributeType="String"/>
+        <relationship name="books" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="BookEntity" inverseName="parentList" inverseEntity="BookEntity"/>
+        <relationship name="parentObject" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BooksEntity" inverseName="results" inverseEntity="BooksEntity"/>
+    </entity>
+    <entity name="BooksEntity" representedClassName="BooksEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="copyright" optional="YES" attributeType="String"/>
+        <attribute name="last_modified" optional="YES" attributeType="String"/>
+        <attribute name="num_results" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="status" optional="YES" attributeType="String"/>
+        <relationship name="results" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BookResultEntity" inverseName="parentObject" inverseEntity="BookResultEntity"/>
+    </entity>
+    <entity name="LinkEntity" representedClassName="LinkEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="ListResultEntity" representedClassName="ListResultEntity" parentEntity="ListsEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="display_name" optional="YES" attributeType="String"/>
+        <attribute name="list_name" optional="YES" attributeType="String"/>
+        <attribute name="list_name_encoded" optional="YES" attributeType="String"/>
+        <attribute name="newest_published_date" optional="YES" attributeType="String"/>
+        <attribute name="oldest_published_date" optional="YES" attributeType="String"/>
+        <relationship name="parentList" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ListsEntity" inverseName="results" inverseEntity="ListsEntity"/>
+    </entity>
+    <entity name="ListsEntity" representedClassName="ListsEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="copyright" optional="YES" attributeType="String"/>
+        <attribute name="num_results" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="status" optional="YES" attributeType="String"/>
+        <relationship name="results" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="ListResultEntity" inverseName="parentList" inverseEntity="ListResultEntity"/>
+    </entity>
+</model>
