@@ -1,0 +1,15 @@
+<h1 style="text-align: center;">Currency Converter</h1>
+<div class="converter_block">
+    <div class="currency_block">
+        <select class="currency_item" [(ngModel)]="baseCurrency" (change)="onBaseCurrencyChange($event)">
+            <option *ngFor="let currency of currencies" [value]="currency">{{ currency }}</option>
+        </select>
+        <input class="currency_item" style="background-color:whitesmoke; border: 0;" type="number" step="0.00001" [(ngModel)]="baseAmount" (input)="onBaseAmountChange()" />
+    </div>
+    <div class="currency_block">
+        <select class="currency_item" [(ngModel)]="targetCurrency" (change)="onTargetCurrencyChange($event)">
+            <option *ngFor="let currency of currencies" [value]="currency">{{ currency }}</option>
+        </select>
+        <input class="currency_item" style="background-color:whitesmoke; border: 0;" type="number" step="0.00001" [(ngModel)]="targetAmount" (input)="onTargetAmountChange()" />
+    </div>
+</div>

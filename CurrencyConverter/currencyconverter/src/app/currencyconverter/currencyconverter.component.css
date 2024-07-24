@@ -1,0 +1,27 @@
+.converter_block {
+    border: 1px solid gray;
+    border-radius: 15px;
+    padding: 50px;
+    display: flex;
+    margin: 1rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.currency_block {
+    display: flex;
+    width: 45%;
+    flex-direction: column;
+}
+
+.currency_item {
+    display: block;
+    margin: 15px;
+    font-size: x-large;
+}
+
+@media screen and (max-width: 800px) {
+    .converter_block {
+        flex-direction: column;
+    }
+}
