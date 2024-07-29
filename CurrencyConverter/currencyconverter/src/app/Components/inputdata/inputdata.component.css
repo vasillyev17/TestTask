@@ -1,0 +1,12 @@
+.currency-column {
+  display: flex;
+  width: 45%;
+  flex-direction: column;
+}
+
+.currency-item {
+  display: block;
+  margin: 15px;
+  font-size: x-large;
+  width: 10em;
+}

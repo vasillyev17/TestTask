@@ -1,0 +1,15 @@
+  .currency-wrapper {
+      border: 1px solid gray;
+      border-radius: 15px;
+      padding: 50px;
+      display: flex;
+      margin: 1rem;
+      align-items: center;
+      justify-content: space-between;
+  }
+
+  @media screen and (max-width: 800px) {
+      .currency-wrapper {
+          flex-direction: column;
+      }
+  }

@@ -1,0 +1,4 @@
+<div class="currency-wrapper" *ngIf="!!currencies.length">
+    <app-currency-input #first [currencies]="currencies" (valuesChanged)="firstCurrencyChange($event)"></app-currency-input>
+    <app-currency-input #second [currencies]="currencies" (valuesChanged)="secondCurrencyChange($event)"></app-currency-input>
+</div>

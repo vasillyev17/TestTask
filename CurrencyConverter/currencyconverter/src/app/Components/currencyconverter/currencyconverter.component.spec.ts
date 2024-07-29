@@ -1,18 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CurrencyconverterComponent } from './currencyconverter.component';
+import { CurrencyConverterComponent } from './currencyconverter.component';
 
 describe('CurrencyconverterComponent', () => {
-  let component: CurrencyconverterComponent;
-  let fixture: ComponentFixture<CurrencyconverterComponent>;
+  let component: CurrencyConverterComponent;
+  let fixture: ComponentFixture<CurrencyConverterComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CurrencyconverterComponent ]
+      declarations: [CurrencyConverterComponent]
     })
-    .compileComponents();
-
-    fixture = TestBed.createComponent(CurrencyconverterComponent);
+      .compileComponents();
+    fixture = TestBed.createComponent(CurrencyConverterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

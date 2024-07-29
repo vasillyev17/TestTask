@@ -1,0 +1,10 @@
+<div class="currency-input">
+  <form [formGroup]="formGroup">
+    <div class="currency-column">
+      <input class="currency-item" type="number" [formControlName]="'amount'" [min]="0">
+      <select class="currency-item" [formControlName]="'currency'">
+        <option *ngFor="let currency of currencies" [value]="currency">{{ currency }}</option>
+      </select>
+    </div>
+  </form>
+</div>

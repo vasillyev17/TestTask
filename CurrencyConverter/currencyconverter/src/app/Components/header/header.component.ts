@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NetworkingService } from '../networking.service';
+import { NetworkingService } from '../../Services/networking/networking.service';
 
 @Component({
   selector: 'app-header',
